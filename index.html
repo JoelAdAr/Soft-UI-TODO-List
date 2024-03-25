@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO List</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+</head>
+<body>
+
+
+    <div class="container">
+        
+        <h1>TODO List</h1>
+        <div class="input-container">
+            <input type="text" id="taskInput" placeholder="Enter task..." maxlength="20">
+            <button id="addTaskBtn"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg></button>
+        </div>
+        <!-- Dropdown for sorting and filtering -->
+        <div class="dropdown">
+            <label for="actions"></label>
+            <select id="actions">
+                <option value="sortByRelevance">Relevance</option>
+                <option value="showCompletedTasks">Completed Tasks</option>
+                <option value="showIncompleteTasks">Incompletd Tasks</option>
+            </select>
+            <button id="refreshBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                <path d="M480-160q-134 0-227-93t-93-227q0-134 93-227t227-93q69 0 132 28.5T720-690v-110h80v280H520v-80h168q-32-56-87.5-88T480-720q-100 0-170 70t-70 170q0 100 70 170t170 70q77 0 139-44t87-116h84q-28 106-114 173t-196 67Z"/></svg>
+            </button>
+
+        </div>
+        <ul id="taskList">
+            <!-- Tasks are added via JavaScript -->
+        </ul>
+    </div>
+    
+
+    <!-- Modal to see a task description -->
+    <div id="descriptionModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Task Description</h2>
+            <p id="taskDescription"></p>
+        </div>
+    </div>
+
+<!-- Modal for adding or editing task descriptions -->
+<div id="addDescriptionModal" class="add-description-modal" data-task-id="">
+    <div class="add-description-modal-content">
+        <span class="add-description-modal-close">&times;</span>
+        <h2>Add/Edit Description</h2>
+        <textarea id="descriptionInput" placeholder="Enter task description..."></textarea>
+        <div class="dropdown relevance-dropdown">
+            <label for="relevance">Relevance:</label>
+            <select id="relevance">
+                <option value="casual">Casual</option>
+                <option value="mild">Mild</option>
+                <option value="urgent">Urgent</option>
+            </select>
+        </div>
+        <button id="saveDescriptionBtn">Save</button>
+    </div>
+</div>
+
+
+
+</body>
+</html>
